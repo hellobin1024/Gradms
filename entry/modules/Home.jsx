@@ -36,6 +36,7 @@ var Home =React.createClass({
 
      return (
          <div className="total" style={{minHeight:"650px",marginTop:"0px",paddingBottom:"30px"}}>
+
              {this.props.children}
          </div>
      )

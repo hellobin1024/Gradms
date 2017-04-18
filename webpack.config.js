@@ -20,7 +20,7 @@ module.exports = {
         port:3000,
         hot:true,
         proxy:{
-            '/gradms/*.do':{
+            '/gradms/*':{
                     target: 'http://localhost:8080/',
                     secure: false
             }

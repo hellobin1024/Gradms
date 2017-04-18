@@ -6,6 +6,7 @@ import Brief from './Brief.jsx';
 import Footer from './Footer.jsx';
 import Nav from '../../components/basic/Nav.jsx';
 import ScaleBar from '../../components/basic/ScaleBar.jsx';
+import CommonFunction from './CommonFunction.jsx';
 
 import '../../css/entry/modules/app.css';
 
@@ -36,7 +37,7 @@ var App =React.createClass({
                         </div>
                     </div>
                     <div className="bottom">
-
+                        <CommonFunction auto={true} />
                     </div>
                 </div>
                 {this.props.children}
