@@ -17,6 +17,7 @@ import Scrolls from '../../data/scrolls.json';
 var App =React.createClass({
     app$init:function(){
 
+        session.getAttribute();
     },
 
     render:function(){

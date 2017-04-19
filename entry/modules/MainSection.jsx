@@ -123,7 +123,7 @@ var MainSection = React.createClass({
                         console.log('iframe in mainsection,path=' + path);
                         ctrl=
                             <iframe style={{width:"100%",position:"relative"}} id="mainFrame"
-                                     frameBorder="0" scrolling="no" src={proxyServer+path+(data!=null&&data!==undefined?data:"")} onLoad={this.iframeLoad}
+                                     frameBorder="0" scrolling="no" src={"/"+proxyServer+path+(data!=null&&data!==undefined?data:"")} onLoad={this.iframeLoad}
                                 />
 
                     }else{
