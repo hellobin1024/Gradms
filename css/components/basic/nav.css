@@ -27,6 +27,7 @@
     _padding-top:9px;_position:absolute;_top: expression(eval(document.documentElement.scrollTop)+0);
 }
 
+
 #navigation .center {
     width: 1263px;
     height: 30px;

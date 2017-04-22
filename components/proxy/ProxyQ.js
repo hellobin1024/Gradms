@@ -27,6 +27,38 @@ var ProxyQ = {
 
     },
 
+    query:(payload)=> {
+
+        return new Promise((resolve,reject) => {
+            var {url,type,dataType,data}=payload;
+            var params = data;
+            if(url=='/login'){
+                params ='grant_type=password&password='+data.password+'&username='+data.username;
+            }
+
+            $.ajax({
+                type    : type !== undefined && type !== null ? type : 'POST',
+                url     : url,
+                dataType: dataType !== undefined && dataType !== null ? dataType : 'json',
+                headers : {
+                           "content-type": "application/x-www-form-urlencoded",
+                           "Authorization":"Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW",
+                           'Accept': "application/json; charset=utf-8",
+                        },
+                cache   : false,
+                data    : params,
+                success : function (response) {
+
+                    resolve(response);
+                },
+                error   : function (xhr, status, err) {
+                    reject(err);
+                }
+            });
+
+        });
+
+    },
     queryHandle: function (type, url, params, dataType, callback) {
         var proxyUrl = url;
         if(App.getModel()=="debug")

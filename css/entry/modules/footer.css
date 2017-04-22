@@ -8,4 +8,6 @@
      text-align: center;
      background-color: #2F8DBC;
      width: 100%;
+     bottom: 0px;
+     position: fixed;
 }

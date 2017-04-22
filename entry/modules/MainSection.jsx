@@ -47,6 +47,18 @@ var MainSection = React.createClass({
         route.push(undefined);
         return ({route: route});
     },
+    testTab:function (e) {
+
+
+                // Get the name of active tab
+                var activeTab = $(e.target).text();
+                // Get the name of previous tab
+                var previousTab = $(e.relatedTarget).text();
+                $(".active-tab span").html(activeTab);
+                $(".previous-tab span").html(previousTab);
+
+
+    },
     render:function(){
         var path=this.props.route.path;
         var ctrl;
@@ -169,6 +181,7 @@ var MainSection = React.createClass({
             <div style={{margin: "0px auto 0 auto",paddingBottom:"200px",width:"100%"}} className="baba">
                 <div ref="mainSection" className="mainSection"
                      style={{display:"none",width:"1024px",marginLeft:"auto",marginRight:"auto"}}>
+
                     {ctrl}
                 </div>
             </div>

@@ -6,13 +6,15 @@ import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './modules/App.jsx';
 import Home from './modules/Home.jsx';
+import Login from './modules/Login';
 import MainSection from './modules/MainSection.jsx';
 
 
 render((
     <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
+        <Route path="/" component={Home}>
+            <IndexRoute component={Login}/>
+            <Route path={window.App.getAppRoute()+"/app"} component={App}/>
             <Route path={window.App.getAppRoute()+"/changePassword.jsp"} component={MainSection}/>
             <Route path={window.App.getAppRoute()+"/allCourseQuery"} component={MainSection}/>
             <Route path={window.App.getAppRoute()+"/news"} component={MainSection}/>

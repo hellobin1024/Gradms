@@ -44,6 +44,22 @@ var Brief=React.createClass({
 
         return ({data: data});
     },
+
+    test:function () {
+        ProxyQ.query({
+            url:"/node/test",
+            data:{
+                request:"test"
+            },
+
+        }).then(function(json){
+
+            var a=json;
+            alert(a);
+        }).catch(function(e){
+            alert(e);
+        })
+    },
     render:function(){
         let data=null;
         if(this.state.data!==undefined&&this.state.data!==null)
@@ -62,6 +78,8 @@ var Brief=React.createClass({
             return (
                 <div className="briefInformation">
                     {data}
+                    <button onClick={this.login}>ok</button>
+                    <button onClick={this.test}>test</button>
                 </div>
             )
         }else{
