@@ -60,6 +60,26 @@ var Brief=React.createClass({
             alert(e);
         })
     },
+
+    login:function(){
+
+        ProxyQ.query({
+            url:"/login",
+            data:{
+                username:'201613493',
+                password:'dxb02083516',
+            },
+
+        }).then(function(json){
+
+            var a=json;
+            alert("登陆成功！拿到的token："+a.access_token);
+        }).catch(function(e){
+            alert(e);
+        })
+
+    },
+
     render:function(){
         let data=null;
         if(this.state.data!==undefined&&this.state.data!==null)
