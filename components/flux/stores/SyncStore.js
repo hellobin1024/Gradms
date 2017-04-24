@@ -21,6 +21,8 @@ var _devote=false;
 
 var _mustdone={};
 
+var _token = "";
+
 
 
 
@@ -98,6 +100,14 @@ function cleanAll() {
 
 
 var SyncStore = assign({}, EventEmitter.prototype, {
+
+    getToken:function () {
+        return _token;
+    },
+
+    setToken:function (token) {
+        _token=token;
+    },
 
     getAll: function () {
         return _todos;
@@ -189,6 +199,22 @@ AppDispatcher.register(function (action) {
     var sync;
 
     switch (action.type) {
+        case SyncConstants.TODO_GETTOKEN:
+            sync = action.sync;
+            if (sync !== '') {
+                create(sync);
+                SyncStore.getToken();
+            }
+            break;
+
+        case SyncConstants.TODO_SETTOKEN:
+            sync = action.sync;
+            if (sync !== '') {
+                create(sync);
+                SyncStore.setToken();
+            }
+            break;
+
         case SyncConstants.TODO_CREATE:
             sync = action.sync;
             if (sync !== '') {

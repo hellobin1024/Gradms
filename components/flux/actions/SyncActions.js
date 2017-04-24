@@ -9,6 +9,20 @@ var SyncConstants = require('../constants/SyncConstants');
 var SyncActions = {
 
 
+    setToken:function(ob){
+      AppDispatcher.dispatch({
+            type:SyncConstants.TODO_SETTOKEN,
+            sync:ob
+      });
+    },
+
+    getToken:function(){
+        AppDispatcher.dispatch({
+            type:SyncConstants.TODO_GETTOKEN,
+
+        });
+    },
+
     create: function (ob) {
         AppDispatcher.dispatch({
             type: SyncConstants.TODO_CREATE,

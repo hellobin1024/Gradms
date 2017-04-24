@@ -47,6 +47,9 @@ var Brief=React.createClass({
 
     test:function () {
         ProxyQ.query({
+            headers:{
+                "Authorization":"Bearer "+SyncStore.getToken(),
+            },
             url:"/node/test",
             data:{
                 request:"test"
@@ -62,17 +65,17 @@ var Brief=React.createClass({
     },
 
     login:function(){
-
         ProxyQ.query({
             url:"/login",
             data:{
-                username:'201613493',
-                password:'dxb02083516',
+                username:'201613508',
+                password:'qindong33491486'
             },
 
         }).then(function(json){
 
             var a=json;
+            SyncStore.setToken(a.access_token);
             alert("登陆成功！拿到的token："+a.access_token);
         }).catch(function(e){
             alert(e);
