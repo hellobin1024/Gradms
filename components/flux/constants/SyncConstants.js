@@ -12,5 +12,7 @@ module.exports = keyMirror({
     TO_ALLIANCE:null,
     TODO_FINISH:null,
     BUSY_IN_BUSINESS:null,
-    UPDATE_ROUTE:null
+    UPDATE_ROUTE:null,
+    TODO_SETTOKEN:null,
+    TODO_GETTOKEN:null
 });

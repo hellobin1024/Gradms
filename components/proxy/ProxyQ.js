@@ -30,7 +30,7 @@ var ProxyQ = {
     query:(payload)=> {
 
         return new Promise((resolve,reject) => {
-            var {url,type,dataType,data}=payload;
+            var {url,type,dataType,data,headers}=payload;
             var params = data;
             if(url=='/login'){
                 params ='grant_type=password&password='+data.password+'&username='+data.username;
@@ -40,7 +40,7 @@ var ProxyQ = {
                 type    : type !== undefined && type !== null ? type : 'POST',
                 url     : url,
                 dataType: dataType !== undefined && dataType !== null ? dataType : 'json',
-                headers : {
+                headers : headers !==undefined && headers !== null ? headers :{
                            "content-type": "application/x-www-form-urlencoded",
                            "Authorization":"Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW",
                            'Accept': "application/json; charset=utf-8",
