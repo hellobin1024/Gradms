@@ -28,6 +28,11 @@ module.exports = {
                 target: 'http://localhost:3030/',
                 secure: false
             }
+
+            // '/gradms/*':{
+            //     target: 'http://localhost:8080/',
+            //     secure: false
+            // }
         }
     },
     plugins: [
