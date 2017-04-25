@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import { Link } from 'react-router'
 import { browserHistory } from 'react-router'
 import Ul from '../../components/basic/Ul.jsx';
-
+import common from '../../data/common.json';
 import '../../css/entry/modules/commonFunction.css';
 
 var SyncActions= require('../../components/flux/actions/SyncActions');
@@ -67,13 +67,14 @@ var CommonFunction=React.createClass({
                 var ob=null;
                 if(response.data!==undefined&&response.data!==null&&response.data!="")
                 {
-                    if(ob==null)
-                        ob=new Object();
-                    //已选菜单
-                    ob.funcs=response.data[0];
-                    //未选菜单
-                    ob.candidate_funcs=response.data[1];
-                    SyncActions.updateRoute(response.data);
+                    // if(ob==null)
+                    //     ob=new Object();
+                    // //已选菜单
+                    // ob.funcs=response.data[0];
+                    // //未选菜单
+                    // ob.candidate_funcs=response.data[1];
+                    // SyncActions.updateRoute(response.data);
+                    ob.funcs=common;
                 }
                 else
                     console.log("type of response is wrong");
@@ -95,13 +96,14 @@ var CommonFunction=React.createClass({
     },
 
     render:function(){
-        var funcs=this.state.funcs;
+        // var funcs=this.state.funcs;
+        var funcs=common;
         if(funcs==null||funcs==undefined){
             if(this.props.auto==true)
                 //this.fetch();
             return <div></div>
         }else{
-            funcs=this.state.funcs;
+
             var menus=new Array();
             var finishes=this.state.finishes;
             funcs.map(function(func,i) {

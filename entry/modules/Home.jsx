@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {render} from 'react-dom';
 import { Link } from 'react-router'
 
@@ -14,11 +15,10 @@ import MENU from '../../data/menus.json';
 import Scales from '../../data/scaleBar.json';
 import Scrolls from '../../data/scrolls.json';
 
+
 var Home =React.createClass({
     app$init:function(){
-
     },
-
     render:function(){
         return (
             <div>
