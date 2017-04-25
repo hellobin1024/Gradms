@@ -99,7 +99,7 @@ var CommonFunction=React.createClass({
         var funcs=this.state.funcs;
         if(funcs==null||funcs==undefined){
             if(this.props.auto==true)
-                this.fetch();
+                //this.fetch();
             return <div></div>
         }else{
             funcs=this.state.funcs;

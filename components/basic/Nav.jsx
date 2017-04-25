@@ -128,8 +128,6 @@ var Nav=React.createClass({
                 console.error(this.props.url, status, err.toString());
             }
         });
-
-
     },
     menushow:function(ref$ob,sel1,sel2,cl){
     //this function would make global pollute
@@ -182,40 +180,39 @@ var Nav=React.createClass({
 
     },
     getInitialState:function(){
-
         var data$initialed;
-
         var data;
-        if(this.props.data!==undefined&&this.props.data!==null)
-        {
+        if(this.props.data!==undefined&&this.props.data!==null) {
             data = this.props.data;
-                data$initialed=true;
-        }
-        else
-        {
-            if(this.props.data$initialed!==undefined&&this.props.data$initialed!==null)
+            data$initialed=true;
+        } else {
+            if(this.props.data$initialed!==undefined&&this.props.data$initialed!==null){
                 data$initialed=this.props.data$initialed;
+            }
         }
-
 
         var auto;
-        if(this.props.auto===true||this.props.auto==="true")
+        if(this.props.auto===true||this.props.auto==="true"){
             auto=true;
+        }
+
+        var isLogin = false;
+        if(this.props.isLogin!=undefined && this.props.isLogin!=null){
+            isLogin = this.props.isLogin;
+        }
+
         var fieldCount = 0;
-        return ({data: data, data$initialed: data$initialed, auto: auto, fieldCount: fieldCount});
+        return ({data: data, data$initialed: data$initialed, auto: auto, fieldCount: fieldCount, isLogin:isLogin});
     },
     render:function(){
-        if(this.state.data$initialed!==true&&(this.props.data==null||this.props.data==undefined))
-        {
+        if(this.state.data$initialed!==true&&(this.props.data==null||this.props.data==undefined)) {
             if(this.state.auto==true)
                 this.fetch();
             return (<div></div>)
 
         }else{
-
             var logo;
-            if(this.props.logo!==undefined&&this.props.logo!==null)
-            {
+            if(this.props.logo!==undefined&&this.props.logo!==null) {
                logo=(
                    <div className="logo">
                         <a>
@@ -224,18 +221,15 @@ var Nav=React.createClass({
                    </div>)
             }
 
-
             var nav;
-            if(this.state.data!==undefined&&this.state.data!==null)
-            {
+            if(this.state.data!==undefined&&this.state.data!==null) {
 
                 var lis = new Array();
                 var linkCb=this.linkCb;
                 this.state.data.map(function(first,i) {
                     var mnavL_left;
                     //三级菜单
-                    if(first.sub[0].sub!==undefined&&first.sub[0].sub!==null)
-                    {
+                    if(first.sub[0].sub!==undefined&&first.sub[0].sub!==null) {
                         var tz_2=new Array();
 
                         //进入二级
@@ -377,25 +371,29 @@ var Nav=React.createClass({
                 <div >
                     <div id="navigation">
                         <div className="center">
-                            <ul className="link">
-                                <li><a id="bell" href="javascript:void(0)" className="fa fa-bell-o"
-                                       style={{marginTop:"10px"}}><span
-                                    style={{color:"#f00", paddingLeft:"3px"}}>{this.state.fieldCount}</span>
+                            {this.state.isLogin ?
+                                null
+                                :
+                                <ul className="link">
+                                    <li><a id="bell" href="javascript:void(0)" className="fa fa-bell-o"
+                                           style={{marginTop:"10px"}}><span
+                                        style={{color:"#f00", paddingLeft:"3px"}}>{this.state.fieldCount}</span>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">刷新<img src={Deploy.getResourceDeployPrefix()+"/images/refresh.png"}/></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">刷新<img src={Deploy.getResourceDeployPrefix()+"/images/refresh.png"}/></a>
 
-                                </li>
-                                <li>
-                                    <a
-                                    href="javascript:void(0)"
-                                    onClick={this.logOut}>退出<img src={Deploy.getResourceDeployPrefix()+"/images/logout.png"}/></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" onClick={this._home}>返回主页<img src={Deploy.getResourceDeployPrefix()+"/images/home.png"}/></a>
-                                </li>
-                            </ul>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="javascript:void(0)"
+                                            onClick={this.logOut}>退出<img src={Deploy.getResourceDeployPrefix()+"/images/logout.png"}/></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" onClick={this._home}>返回主页<img src={Deploy.getResourceDeployPrefix()+"/images/home.png"}/></a>
+                                    </li>
+                                </ul>
+                            }
                         </div>
                     </div>
                     <div className="header_box">
@@ -403,7 +401,6 @@ var Nav=React.createClass({
                             {logo}
                             {nav}
                         </div>
-
                     </div>
                 </div>);
         }
