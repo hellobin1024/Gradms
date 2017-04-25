@@ -1,0 +1,38 @@
+[
+  {
+  "img": "function1.png",
+  "label": "学术规范承诺书",
+  "route": "/questionnaire/student_questionnaire_init.do"
+  },
+  {
+
+    "img": "function2.png",
+    "label": "学籍信息",
+    "route": "/person/stuinfo_studentAllInfo.do"
+  },
+  {
+    "img": "function3.png",
+    "label": "免修英语申请",
+    "route": "/exemption/exemptionEnglishApplyInit.do?inputType=1"
+  },
+  {
+    "img": "function4.png",
+    "label": "申请绿色通道",
+    "route": "/questionnaire/student_questionnaire_init.do"
+  },
+  {
+    "img": "function5.png",
+    "label": "出行计划",
+    "route": "/questionnaire/student_questionnaire_init.do"
+  },
+  {
+    "img": "function6.png",
+    "label": "填写既往病史",
+    "route": "/questionnaire/student_questionnaire_init.do"
+  },
+  {
+    "img": "function7.png",
+    "label": "打印体检表",
+    "route": "/questionnaire/student_questionnaire_init.do"
+  }
+]
