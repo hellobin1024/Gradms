@@ -8,7 +8,7 @@ import Nav from '../../components/basic/Nav.jsx';
 import ScaleBar from '../../components/basic/ScaleBar.jsx';
 import CommonFunction from './CommonFunction.jsx';
 
-import '../../css/entry/modules/app.css';
+import '../../css/entry/modules/home.css';
 
 import MENU from '../../data/menus.json';
 import Scales from '../../data/scaleBar.json';
