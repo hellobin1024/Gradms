@@ -87,7 +87,6 @@ var CommonFunction=React.createClass({
 
     },
 
-
     getInitialState:function(){
         let candidate=null;
         if(this.props.candidate!==undefined&&this.props.candidate!==null)
@@ -107,13 +106,13 @@ var CommonFunction=React.createClass({
             var finishes=this.state.finishes;
             funcs.map(function(func,i) {
                 var span=null;
-                //if(finishes!==null&&finishes!==undefined) {
-                //    if(finishes[func.label]==true) {
-                //        span=   <span style={{position: "absolute",marginLeft: "30px",top: "50px",fontSize:"1.6em"}}>
-                //                <i className="fa fa-check" style={{color:"#222"}}></i>
-                //            </span>
-                //    }
-                //}
+                if(finishes!==null&&finishes!==undefined) {
+                    if(finishes[func.label]==true) {
+                        span=   <span style={{position: "absolute",marginLeft: "30px",top: "50px",fontSize:"1.6em"}}>
+                                <i className="fa fa-check" style={{color:"#222"}}></i>
+                            </span>
+                    }
+                }
                 let route=func.route;
                 let outerLink=/^http:\/\//;
                 if(outerLink.exec(route))//外链
