@@ -52,7 +52,6 @@
     margin: 15px 24px 4px 24px;
 }
 .tourist_txt {
-    color: #0066b3;
     height: 41px;
     width: 70px;
     line-height: 41px;
@@ -68,9 +67,7 @@
     float: left;
     text-align: center;
 }
-.tourist_txt2 a {
-    color: #0066b3;
-}
+
 .tourist_txt_rht {
     color: #0066b3;
     height: 41px;
@@ -134,6 +131,7 @@
 #tableVerify {
     width: 240px;
     height: 37px;
+    margin-bottom: 10px
 }
 #tableVerify #login_strVerify {
     /* background: url(../images/register/input2.png) no-repeat; */
@@ -208,4 +206,16 @@
     font-weight: bold;
     line-height: 30px;
     font: 13px/1.5 '微软雅黑',Arial,Helvetica,Tahoma,sans-serif;
+}
+
+.login-btn {
+    width: 265px;
+    height: 40px;
+    background: #2F8DBC;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    border: 0;
+    margin-bottom: 16px;
 }

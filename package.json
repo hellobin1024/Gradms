@@ -35,14 +35,29 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.16.3"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "jsx-loader": "^0.13.2"
-  }
+  },
+  "name": "package",
+  "description": "",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellobin1024/Gradms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellobin1024/Gradms/issues"
+  },
+  "homepage": "https://github.com/hellobin1024/Gradms#readme"
 }

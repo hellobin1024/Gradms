@@ -26,7 +26,6 @@ var Login =React.createClass({
 
     },
     banner:function () {
-
             $(".bannerBtn li").each(function(index,element){
                 $(this).on("mouseover",function(){
                     clearInterval(timer);
@@ -53,11 +52,16 @@ var Login =React.createClass({
 
     },
 
+    display:function(ob){
+        var id = ob;
+        $("#"+id).css('display','none');
+    },
+
     render:function(){
 
         return (
             <div>
-                <Nav logo={"/images/school_logo.png"} data={MENU}/>
+                <Nav logo={"/images/school_logo.png"} data={MENU} isLogin={true}/>
 
                 <div className="topbg"></div>
                 <div className="banner" style={{overflow:'hidden'}} onload={this.banner()}>
@@ -87,16 +91,16 @@ var Login =React.createClass({
                                         <tr >
                                             <td>
                                                 <div className="ipt_cn ">
-                                                    <span id="strLoginName_SHOW" className="holderClass"  >用户名</span>
-                                                    <input className="Wrap_input_search"  id="login_strLoginName" name="login_strLoginName"  />
+                                                    <span id="strLoginName_SHOW" className="holderClass"></span>
+                                                    <input className="Wrap_input_search"  id="login_strLoginName" name="login_strLoginName" tabIndex="1" placeholder="用户名" autoComplete="off" />
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr >
                                             <td id="passWord_tr">
                                                 <div className="ipt_pwd">
-                                                    <span id="strPassword_SHOW" className="holderClass" >密码</span>
-                                                    <input className="Wrap_input_search" type="password" id="login_strPassword" name="login_strPassword"  />
+                                                    <span id="strPassword_SHOW" className="holderClass"></span>
+                                                    <input className="Wrap_input_search" type="password" id="login_strPassword" name="login_strPassword" tabIndex="2" placeholder="密码" autoComplete="off" />
                                                 </div>
                                             </td>
                                         </tr>
@@ -117,7 +121,7 @@ var Login =React.createClass({
                                         <tr >
                                             <td>
                                                 <Link to={window.App.getAppRoute() + "/app"}>
-                                                    <button onClick={this.login}>登录</button>
+                                                    <button className="login-btn" onClick={this.login}>登录</button>
                                                 </Link>
                                             </td>
                                         </tr>
@@ -132,7 +136,6 @@ var Login =React.createClass({
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>

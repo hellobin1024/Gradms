@@ -63,6 +63,7 @@ var Brief=React.createClass({
             alert(e);
         })
     },
+
     login:function(){
         ProxyQ.query({
             url:"/login",
@@ -76,12 +77,12 @@ var Brief=React.createClass({
             var a=json;
             SyncStore.setToken(a.access_token);
             alert("登陆成功！拿到的token："+a.access_token);
-
         }).catch(function(e){
             alert(e);
         })
 
     },
+
     render:function(){
         let data=null;
         if(this.state.data!==undefined&&this.state.data!==null)
