@@ -25,8 +25,8 @@ var Login =React.createClass({
         }).catch(function(e){
             alert(e);
         })
-
     },
+
     banner:function () {
             $(".bannerBtn li").each(function(index,element){
                 $(this).on("mouseover",function(){
@@ -51,12 +51,6 @@ var Login =React.createClass({
                 },5000);
             }
             autoplay();
-
-    },
-
-    display:function(ob){
-        var id = ob;
-        $("#"+id).css('display','none');
     },
 
     render:function(){
