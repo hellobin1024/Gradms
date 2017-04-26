@@ -4,7 +4,9 @@ import {Link} from 'react-router';
 import Nav from '../../components/basic/Nav.jsx';
 import MENU from '../../data/menus.json';
 var ProxyQ=require('../../components/proxy/ProxyQ.js');
+
 import '../../css/entry/modules/login.css'
+
 var Login =React.createClass({
     login:function(){
         var name=$('#login_strLoginName').val()
@@ -16,10 +18,10 @@ var Login =React.createClass({
                 password:psw
             },
 
-        }).then(function(json){
+        }).then(function(res){
 
-            var a=json;
-            alert("登陆成功！拿到的token："+a.access_token);
+            var re=res;
+            alert("登陆成功！拿到的token：" + re.access_token);
         }).catch(function(e){
             alert(e);
         })
@@ -108,12 +110,14 @@ var Login =React.createClass({
                                         <tr >
                                             <td>
                                                 <table id="tableVerify">
+                                                <tbody>
                                                     <tr >
                                                         <td><span className="info" align='right'>验证码:  &nbsp;</span></td>
                                                         <td><input type="text" name="login_strVerify" id="login_strVerify"  /></td>
                                                         <td><img id="validateImage"  /></td>
                                                         <td ><a href="#" >换一张</a></td>
                                                     </tr>
+                                                </tbody>
                                                 </table>
                                             </td>
                                         </tr>
@@ -139,31 +143,37 @@ var Login =React.createClass({
                         </div>
                     </div>
                 </div>
-                <div id="LoginNav">
-                    <p className="LoginNavTitle">
-                        <i className="labaIoc" style={{float:'left'}}></i>
-                        <span className="InfoTitle" style={{float:'left',marginLeft:'3px'}}></span>
-                        <span className="Infocontent">
-                    </span>
-                </p>
-                <div className="LoginNavContent clearfix">
-                    <div className="LoginNavContent_left">
-                        <div className="list list1">
-                            <dl>
-                                <dt>
-                                    <i></i>
-                                    <span>友情提示：</span>
-                                </dt>
-                                <dd>（1）学生登陆为学生学号，缺省密码为前缀D（博士）/ 硕士（M）+证件号码后7位，证件号码中的字母为大写字母</dd>
-                                <dd>
-                                    <dd>（2）建议使用9.0以上的IE浏览器或google浏览器,360浏览器请选用极速模式</dd>
-                                </dd>
-                            </dl>
-                        </div>
 
+
+                <div id="LoginNav">
+                    <div className="LoginNavTitle">
+                        <i className="labaIoc" style={{float:'left'}}></i>
+                        <span className="InfoTitle" style={{float:'left', marginLeft:'3px'}}></span>
+				        <span className="Infocontent">
+				            <marquee style={{float:'left', marginTop:'11px', marginLeft:'5px', width:'800px'}} onmouseover="this.stop();this.scrollDelay=50;"
+				                onmouseout="this.start();this.scrollDelay=1" scrollAmount="4" scrollDelay="1" direction="left" >
+                                欢迎来到山东大学
+                            </marquee>
+				        </span>
+                    </div>
+                    <div style={{clear:'both'}}></div>
+
+                    <div className="LoginNavContent clearfix">
+                        <div className="LoginNavContent_left">
+                            <div className="list list1">
+                                <dl>
+                                    <dt>
+                                        <i></i>
+                                        <span>友情提示：</span>
+                                    </dt>
+                                    <dd>（1）学生登陆为学生学号，缺省密码为前缀D（博士）/ 硕士（M）+证件号码后7位，证件号码中的字母为大写字母</dd>
+                                    <dd>（2）建议使用9.0以上的IE浏览器或google浏览器,360浏览器请选用极速模式</dd>
+                                </dl>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
                 <Footer/>
             </div>
         )

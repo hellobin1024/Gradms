@@ -219,3 +219,12 @@
     border: 0;
     margin-bottom: 16px;
 }
+
+.LoginNavContent .list dl dt i {
+    width: 4px;
+    height: 22px;
+    background: #2D8DDE;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
