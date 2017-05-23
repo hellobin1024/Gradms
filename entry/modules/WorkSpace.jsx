@@ -1,6 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
 import '../../css/entry/modules/mainSection.css';
+import LetterOfCommitment from '../modules/LetterOfCommitment'
+import Anamnesis from '../modules/Anamnesis'
+import TripPlan from '../modules/TripPlan'
 import EnglishApply from '../modules/EnglishApply.jsx';
 import GreenChannelApply from '../modules/GreenChannelApply.jsx';
 import Brief from './Brief.jsx';
@@ -81,9 +84,8 @@ var WorkSpace =React.createClass({
         switch (path) {
             case App.getAppRoute() + "/app":
                 ctrl =
-                    <div>
-                       2
-                    </div>
+                    <LetterOfCommitment/>
+
                 break;
             case App.getAppRoute() + "/workspaceEnglishApply":
                 ctrl =
@@ -98,6 +100,18 @@ var WorkSpace =React.createClass({
             case App.getAppRoute() + "/workspaceStudentStatusInfo":
                 ctrl =
                     <StudentStatusInfo/>
+                break;
+            case App.getAppRoute() + "/englishApply":
+                ctrl =
+                    <EnglishApply/>
+                break;
+            case App.getAppRoute() + "/tripPlan":
+                ctrl =
+                    <TripPlan/>
+                break;
+            case App.getAppRoute() + "/anamnesis":
+                ctrl =
+                    <Anamnesis/>
                 break;
             default:
                 break;

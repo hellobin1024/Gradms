@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Home from '../modules/Home.jsx';
+
 
 var config=require('../../config.json');
 import '../../css/entry/modules/mainSection.css';

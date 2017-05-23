@@ -5,8 +5,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './modules/App.jsx';
-import EnglishApply from './modules/EnglishApply.jsx';
-import GreenChannelApply from './modules/GreenChannelApply.jsx';
 import personInfo from './modules/studentStatusInformation/personInfo'
 import trainInfo from './modules/studentStatusInformation/trainInfo'
 import beforeEntryInfo from './modules/studentStatusInformation/beforeEntryInfo'
@@ -15,8 +13,7 @@ import resume from './modules/studentStatusInformation/workAndLearnResume'
 import WorkSpace from './modules/WorkSpace.jsx'
 import Login from './modules/Login';
 import MainSection from './modules/MainSection.jsx';
-import SchoolInfo from './modules/SchoolInfo';
-import Home from './modules/Home'
+
 
 render((
     <Router history={browserHistory}>
@@ -24,10 +21,11 @@ render((
             <IndexRoute component={Login}/>
             <Route path={window.App.getAppRoute()+"/app"} component={WorkSpace}/>
             <Route path={window.App.getAppRoute()+"/workspaceEnglishApply"} component={WorkSpace}/>
-            <Route path={window.App.getAppRoute()+"/englishApply"} component={EnglishApply}/>
+            <Route path={window.App.getAppRoute()+"/englishApply"} component={WorkSpace}/>
             <Route path={window.App.getAppRoute()+"/workspaceStudentStatusInfo"} component={WorkSpace}/>
-            <Route path={window.App.getAppRoute()+"/schoolInfo"} component={SchoolInfo}/>
+            <Route path={window.App.getAppRoute()+"/tripPlan"} component={WorkSpace}/>
             <Route path={window.App.getAppRoute()+"/greenChannelApply"} component={WorkSpace}/>
+            <Route path={window.App.getAppRoute()+"/anamnesis"} component={WorkSpace}/>
             <Route path={window.App.getAppRoute()+"/personInfo"} component={personInfo}/>
             <Route path={window.App.getAppRoute()+"/trainInfo"} component={trainInfo}/>
             <Route path={window.App.getAppRoute()+"/beforeEntryInfo"} component={beforeEntryInfo}/>

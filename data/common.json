@@ -2,7 +2,7 @@
   {
   "img": "function1.png",
   "label": "学术规范承诺书",
-  "route": "/questionnaire/student_questionnaire_init.do"
+  "route": "/app"
   },
   {
 
@@ -13,7 +13,7 @@
   {
     "img": "function3.png",
     "label": "免修英语申请",
-    "route": "/workspaceEnglishApply"
+    "route": "/englishApply"
   },
   {
     "img": "function4.png",
@@ -23,12 +23,12 @@
   {
     "img": "function5.png",
     "label": "出行计划",
-    "route": "/questionnaire/student_questionnaire_init.do"
+    "route": "/tripPlan"
   },
   {
     "img": "function6.png",
     "label": "填写既往病史",
-    "route": "/questionnaire/student_questionnaire_init.do"
+    "route": "/anamnesis"
   },
   {
     "img": "function7.png",
