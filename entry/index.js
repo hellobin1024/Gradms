@@ -16,7 +16,6 @@ import WorkSpace from './modules/WorkSpace.jsx'
 import Login from './modules/Login';
 import MainSection from './modules/MainSection.jsx';
 import SchoolInfo from './modules/SchoolInfo';
-import Home from './modules/Home'
 
 render((
     <Router history={browserHistory}>
