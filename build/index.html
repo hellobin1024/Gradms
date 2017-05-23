@@ -13,6 +13,8 @@
     <link href="animate/css/animate.css" rel="stylesheet">
     <link rel="stylesheet" href="datetimepicker/css/bootstrap-datetimepicker.css"/>
     <link href="css/user.css" rel="stylesheet">
+    <link rel="stylesheet" href="react-bootstrap-table/dist/react-bootstrap-table-all.min.css">
+
     <style>
         table.center > tbody > tr > th {
             text-align: center border : 1 px solid #336699;
@@ -49,6 +51,8 @@
     <script type="text/javascript" src="zepto.js"></script>
     <script type="text/javascript" src="image-zoomer/js/zoomsl-3.0.min.js"></script>
     <script type="text/javascript" src="jquery-media/jquery.media.js"></script>
+    <script type="text/javascript" src="react-bootstrap-table/dist/react-bootstrap-table.js"/>
+
     <script>
       $(document).ready(function(){
           window.App.remodal.inst=$('[data-remodal-id="re-modal"]').remodal({
@@ -83,6 +87,7 @@
     <div>
         <h2 id="modal1Title">业务办理完成</h2>
     </div>
+    <table data-toggle="table"></table>
     <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
     <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
 </div>

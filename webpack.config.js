@@ -20,6 +20,10 @@ module.exports = {
         port:3000,
         hot:true,
         proxy:{
+            '/gradms/*':{
+                    target: 'http://localhost:3030/',
+                    secure: false
+            },
             '/node/*':{
                     target: 'http://localhost:3030/',
                     secure: false
@@ -27,12 +31,9 @@ module.exports = {
             '/login':{
                 target: 'http://localhost:3030/',
                 secure: false
-            }
+            },
 
-            // '/gradms/*':{
-            //     target: 'http://localhost:8080/',
-            //     secure: false
-            // }
+
         }
     },
     plugins: [
@@ -47,13 +48,18 @@ module.exports = {
             },
             { test: /\.css$/, loader: "style!css" },
             {test:/\.json$/,loader:"json"},
+            // {
+            //     test: /\.jsx?$/,
+            //     loader:'babel',
+            //     exclude:'/node_modules/',
+            //     query: {
+            //         presets: ['es2015','react']
+            //     }
+            // },
             {
                 test: /\.jsx?$/,
-                loader:'babel',
-                exclude:'/node_modules/',
-                query: {
-                    presets: ['es2015','react']
-                }
+                loaders: ['babel?presets[]=es2015,presets[]=react,presets[]=stage-0,plugins[]=transform-decorators-legacy'],
+                exclude: /node_modules/
             },
             {test: /\.png$/, loader: "url-loader?mimetype=image/png"},
             {test: /\.gif$/, loader: "url-loader?mimetype=image/gif"},

@@ -73,7 +73,7 @@ let IFrame=React.createClass({
            else{
                if (this.props.auto == true)
                {
-                   this.fetch();
+                   // this.fetch();
                }
                return (<div className="iframe"></div>);
            }

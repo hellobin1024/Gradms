@@ -4,25 +4,43 @@ import {Link} from 'react-router';
 import Nav from '../../components/basic/Nav.jsx';
 import MENU from '../../data/menus.json';
 var ProxyQ=require('../../components/proxy/ProxyQ.js');
+var SyncStore = require('../../components/flux/stores/SyncStore');
 
 import '../../css/entry/modules/login.css'
 
 var Login =React.createClass({
     login:function(){
-        var name=$('#login_strLoginName').val()
-        var psw=$('#login_strPassword').val()
+        // var name=$('#login_strLoginName').val()
+        // var psw=$('#login_strPassword').val()
+        // ProxyQ.query({
+        //     url:"/login",
+        //     data:{
+        //         username:name,
+        //         password:psw
+        //     },
+        //
+        // }).then(function(res){
+        //
+        //     var re=res;
+        //     alert("登陆成功！拿到的token：" + re.access_token);
+        //     SyncStore.setToken(re.access_token);
+        // }).catch(function(e){
+        //     alert(e);
+        // })
         ProxyQ.query({
-            url:"/login",
-            data:{
-                username:name,
-                password:psw
+            url: "/login",
+            data: {
+                username: '201613508',
+                password: 'qindong33491486'
             },
 
-        }).then(function(res){
+        }).then(function (json) {
 
-            var re=res;
-            alert("登陆成功！拿到的token：" + re.access_token);
-        }).catch(function(e){
+            var a = json;
+            SyncStore.setToken(a.access_token);
+            alert("登陆成功！拿到的token：" + a.access_token);
+
+        }).catch(function (e) {
             alert(e);
         })
     },

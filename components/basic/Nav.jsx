@@ -204,6 +204,7 @@ var Nav=React.createClass({
         var fieldCount = 0;
         return ({data: data, data$initialed: data$initialed, auto: auto, fieldCount: fieldCount, isLogin:isLogin});
     },
+
     render:function(){
         if(this.state.data$initialed!==true&&(this.props.data==null||this.props.data==undefined)) {
             if(this.state.auto==true)
@@ -368,7 +369,7 @@ var Nav=React.createClass({
 
 
             return (
-                <div >
+                <div>
                     <div id="navigation">
                         <div className="center">
                             {this.state.isLogin ?

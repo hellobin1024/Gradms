@@ -258,7 +258,7 @@ var ScaleBar =React.createClass({
         if(this.state.data$initialed!==true&&(this.props.data==null||this.props.data==undefined))
         {
             if(this.state.auto==true)
-                this.fetch();
+                // this.fetch();
             return (<div></div>)
 
         }else{
