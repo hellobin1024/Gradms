@@ -28,7 +28,6 @@ var ProxyQ = {
     },
 
     query:function(payload){
-
         return new Promise( function(resolve,reject)  {
             var {url,type,dataType,data,headers}=payload;
             var params = data;
@@ -108,6 +107,7 @@ var ProxyQ = {
             }
         });
     },
+
     queryHandle: function (type, url, params, dataType, callback) {
         var proxyUrl = url;
         if(App.getModel()=="debug")
@@ -203,11 +203,7 @@ var ProxyQ = {
                 $modal.modal('show');
             }
         });
-
     }
-
-
 };
-
 
 module.exports = ProxyQ;

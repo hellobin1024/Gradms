@@ -37,14 +37,14 @@ var WorkSpace =React.createClass({
             //height=document.body.scrollHeight;
 
         },
-    test:function () {
+    fetch:function(){
         ProxyQ.query({
             headers:{
                 "Authorization":"Bearer "+SyncStore.getToken(),
             },
-            url:"/node/test",
+            url:"/node/menue",
             data:{
-                request:"test"
+                request:"getTopMenue"
             },
 
         }).then(function(json){

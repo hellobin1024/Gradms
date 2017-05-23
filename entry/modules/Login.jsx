@@ -30,8 +30,8 @@ var Login =React.createClass({
         ProxyQ.query({
             url: "/login",
             data: {
-                username: '201613508',
-                password: 'qindong33491486'
+                username: '201613493',
+                password: 'dxb02083516'
             },
 
         }).then(function (json) {

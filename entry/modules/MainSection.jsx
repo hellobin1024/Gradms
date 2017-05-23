@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-
 var config=require('../../config.json');
 import '../../css/entry/modules/mainSection.css';
 var SyncActions = require('../../components/flux/actions/SyncActions');
@@ -15,9 +14,7 @@ var MainSection = React.createClass({
         var height=null;
         height=target.contentDocument.body.scrollHeight;
         target.height=height;
-            //height=document.body.scrollHeight;
-
-
+        //height=document.body.scrollHeight;
     },
     // syncHandle     : function (ob) {
     //     //TODO:create new ob or update...
@@ -76,7 +73,6 @@ var MainSection = React.createClass({
             switch(path)
             {
                 case App.getAppRoute() + "/app":
-                    // ctrl = <Home></Home>
                     ctrl =
                         <div>qqq</div>
                     break;

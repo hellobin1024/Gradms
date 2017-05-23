@@ -14,7 +14,6 @@ import WorkSpace from './modules/WorkSpace.jsx'
 import Login from './modules/Login';
 import MainSection from './modules/MainSection.jsx';
 
-
 render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
