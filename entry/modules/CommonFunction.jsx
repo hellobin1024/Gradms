@@ -49,42 +49,42 @@ var CommonFunction=React.createClass({
         $("#slider").animate({left:"920px"});
     },
     fetch:function(candidate){
-        var url="/bsuims/reactPageDataRequest.do";
-        var params={
-            reactPageName:"registerRulePage",
-            reactActionName:"getStepInfoReact"
-        };
-        //将已选中的菜单加入
-        if(candidate!==undefined&&candidate!==null)
-            params.candidate = JSON.stringify(candidate);
-        ProxyQ.queryHandle(
-            null,
-            url,
-            params,
-            null,
-            function(response){
-                //这里需要统一规范后台返回的数据格式
-                var ob=null;
-                if(response.data!==undefined&&response.data!==null&&response.data!="")
-                {
-                    // if(ob==null)
-                    //     ob=new Object();
-                    // //已选菜单
-                    // ob.funcs=response.data[0];
-                    // //未选菜单
-                    // ob.candidate_funcs=response.data[1];
-                    // SyncActions.updateRoute(response.data);
-                    ob.funcs=common;
-                }
-                else
-                    console.log("type of response is wrong");
-                if(response.finishes!==undefined&&response.finishes!==null)
-                    ob.finishes=response.finishes;
-                if(ob!==null)
-                    this.setState(ob);
-
-            }.bind(this)
-        );
+        // var url="/bsuims/reactPageDataRequest.do";
+        // var params={
+        //     reactPageName:"registerRulePage",
+        //     reactActionName:"getStepInfoReact"
+        // };
+        // //将已选中的菜单加入
+        // if(candidate!==undefined&&candidate!==null)
+        //     params.candidate = JSON.stringify(candidate);
+        // ProxyQ.queryHandle(
+        //     null,
+        //     url,
+        //     params,
+        //     null,
+        //     function(response){
+        //         //这里需要统一规范后台返回的数据格式
+        //         var ob=null;
+        //         if(response.data!==undefined&&response.data!==null&&response.data!="")
+        //         {
+        //             // if(ob==null)
+        //             //     ob=new Object();
+        //             // //已选菜单
+        //             // ob.funcs=response.data[0];
+        //             // //未选菜单
+        //             // ob.candidate_funcs=response.data[1];
+        //             // SyncActions.updateRoute(response.data);
+        //             ob.funcs=common;
+        //         }
+        //         else
+        //             console.log("type of response is wrong");
+        //         if(response.finishes!==undefined&&response.finishes!==null)
+        //             ob.finishes=response.finishes;
+        //         if(ob!==null)
+        //             this.setState(ob);
+        //
+        //     }.bind(this)
+        // );
 
     },
 

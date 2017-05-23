@@ -54,7 +54,7 @@ var Zoomer=React.createClass({
         {
             if(this.props.auto==true)
             {
-                this.fetch();
+                // this.fetch();
             }
             return(<div></div>);
         }

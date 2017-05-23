@@ -8,17 +8,17 @@
 
     "img": "function2.png",
     "label": "学籍信息",
-    "route": "/person/stuinfo_studentAllInfo.do"
+    "route": "/workspaceStudentStatusInfo"
   },
   {
     "img": "function3.png",
     "label": "免修英语申请",
-    "route": "/exemption/exemptionEnglishApplyInit.do?inputType=1"
+    "route": "/workspaceEnglishApply"
   },
   {
     "img": "function4.png",
     "label": "申请绿色通道",
-    "route": "/questionnaire/student_questionnaire_init.do"
+    "route": "/greenChannelApply"
   },
   {
     "img": "function5.png",

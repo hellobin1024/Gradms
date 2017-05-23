@@ -4,7 +4,6 @@ import Span from '../basic/Span.jsx';
 import Select from '../basic/Select.jsx';
 import Download from '../basic/Download.jsx';
 import Radio from '../basic/Radio.jsx';
-import '../../css/components/panel/panel.css';
 import dict from '../../data/dictionary.json';
 import Upload from '../basic/Upload.jsx';
 import Calendar from '../basic/Calendar.jsx'
@@ -780,7 +779,7 @@ var Panel=React.createClass({
         }else{
 
             if(this.props.auto==true)
-                this.fetch();
+                // this.fetch();
 
             return(
                 <div className={"row"}>
