@@ -27,6 +27,7 @@ var ProxyQ = {
 
     },
 
+    // 请求node服务器
     query:(payload)=> {
 
         return new Promise((resolve,reject) => {
@@ -59,6 +60,7 @@ var ProxyQ = {
         });
 
     },
+
     queryHandle: function (type, url, params, dataType, callback) {
         var proxyUrl = url;
         if(App.getModel()=="debug")

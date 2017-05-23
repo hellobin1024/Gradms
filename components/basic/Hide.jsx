@@ -1,6 +1,5 @@
 import React from 'react';
 import {render} from 'react-dom';
-import '../../css/components/basic/hide.css';
 
 /**
  * 1.本组件完成子组件的包装加壳
@@ -45,9 +44,6 @@ var Hide=React.createClass({
                 </div>
             )
         }
-
-
-
     }
 });
 export default Hide;

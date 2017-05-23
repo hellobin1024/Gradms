@@ -1,5 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
+
+import News from './News.jsx';
+
 var config=require('../../config.json');
 import '../../css/entry/modules/mainSection.css';
 var SyncActions = require('../../components/flux/actions/SyncActions');
@@ -13,9 +16,7 @@ var MainSection = React.createClass({
         var height=null;
         height=target.contentDocument.body.scrollHeight;
         target.height=height;
-            //height=document.body.scrollHeight;
-
-
+        //height=document.body.scrollHeight;
     },
     syncHandle     : function (ob) {
         //TODO:create new ob or update...
@@ -134,9 +135,8 @@ var MainSection = React.createClass({
                         path=path.replace(App.getAppRoute(),"");
                         console.log('iframe in mainsection,path=' + path);
                         ctrl=
-                            <iframe style={{width:"100%",position:"relative"}} id="mainFrame"
-                                     frameBorder="0" scrolling="no" src={"/"+proxyServer+path+(data!=null&&data!==undefined?data:"")} onLoad={this.iframeLoad}
-                                />
+                            <iframe style={{width:"100%",position:"relative"}} id="mainFrame" frameBorder="0" scrolling="no"
+                                    src={"/"+proxyServer+path+(data!=null&&data!==undefined?data:"")} onLoad={this.iframeLoad} />
 
                     }else{
 

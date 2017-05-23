@@ -50,9 +50,9 @@ var Brief=React.createClass({
             headers:{
                 "Authorization":"Bearer "+SyncStore.getToken(),
             },
-            url:"/node/test",
+            url:"/node/menue",
             data:{
-                request:"test"
+                request:"getTopMenue"
             },
 
         }).then(function(json){
@@ -62,6 +62,24 @@ var Brief=React.createClass({
         }).catch(function(e){
             alert(e);
         })
+
+
+        //ProxyQ.query({
+        //    headers:{
+        //        "Authorization":"Bearer "+SyncStore.getToken(),
+        //    },
+        //    url:"/node/test",
+        //    data:{
+        //        request:"test"
+        //    },
+        //
+        //}).then(function(json){
+        //
+        //    var a=json;
+        //    alert(a);
+        //}).catch(function(e){
+        //    alert(e);
+        //})
     },
 
     login:function(){
