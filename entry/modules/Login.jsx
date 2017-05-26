@@ -39,7 +39,7 @@ var Login =React.createClass({
             var a = json;
             SyncStore.setToken(a.access_token);
             alert("登陆成功！拿到的token：" + a.access_token);
-
+            document.getElementById("goToOther").click();
         }).catch(function (e) {
             alert(e);
         })
@@ -133,12 +133,16 @@ var Login =React.createClass({
                                                 </table>
                                             </td>
                                         </tr>
-
                                         <tr >
                                             <td>
-                                                <Link to={window.App.getAppRoute() + "/app"}>
-                                                    <button className="login-btn" onClick={this.login}>登录</button>
-                                                </Link>
+
+                                                <button className="login-btn" tabIndex="3" onClick={this.login}>
+                                                    <a style={{color:'#ffffff'}}>登录</a>
+                                                    <Link to={window.App.getAppRoute() + "/app"} id="goToOther"></Link>
+                                                </button>
+
+
+
                                             </td>
                                         </tr>
                                         </tbody>

@@ -15,6 +15,10 @@ import StudentStatusInfo from '../../entry/modules/test'
 var ReactBsTable  = require('react-bootstrap-table');
 var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
+
+var ProxyQ=require('../../components/proxy/ProxyQ.js');
+var SyncStore = require('../../components/flux/stores/SyncStore');
+
 var WorkSpace =React.createClass({
 
     remote(remoteObj) {
@@ -46,12 +50,17 @@ var WorkSpace =React.createClass({
 
         }).then(function(json){
 
-            var a=json;
+            this.setState({menueData:json})
             alert(a);
         }).catch(function(e){
             alert(e);
         })
     },
+
+    getInitialState:function(){
+        return ({menueData:null})
+    },
+
     render :function(){
         var path=this.props.path==undefined?this.props.route.path:this.props.path;
 
@@ -103,34 +112,41 @@ var WorkSpace =React.createClass({
                 break;
         }
 
-        return (
-        <div>
-            <Nav logo={Deploy.getResourceDeployPrefix()+"/"+"images/school_logo.png"} data={MENU}/>
+        if(this.state.menueData==undefined || this.state.menueData== null){
+            this.fetch();
+            return(<div></div>)
+        }else{
+            return (
+                <div>
+                    <Nav logo={Deploy.getResourceDeployPrefix()+"/"+"images/school_logo.png"} data={this.state.menueData}/>
 
-            <div className="topbg"></div>
+                    <div className="topbg"></div>
 
-            <div className="keyNavigation">
-                <div className="top">
-                    <div className="block">
-                        <Brief data={['欢迎登陆山东大学数字迎新系统，请仔细阅读报道须知和各类通知,','并尽快选择下面的功能按要求完善相关信息和业务申请.']}/>
+                    <div className="keyNavigation">
+                        <div className="top">
+                            <div className="block">
+                                <Brief data={['欢迎登陆山东大学数字迎新系统，请仔细阅读报道须知和各类通知,','并尽快选择下面的功能按要求完善相关信息和业务申请.']}/>
+                            </div>
+                        </div>
+                        <div className="bottom">
+                            <CommonFunction auto={true} />
+                        </div>
                     </div>
-                </div>
-                <div className="bottom">
-                    <CommonFunction auto={true} />
-                </div>
-            </div>
-            <div style={{margin: "0px auto 0 auto",paddingBottom:"200px",width:"100%"}} className="baba">
-                <div ref="mainSection" className="mainSection"
-                     style={{width:"1024px",marginLeft:"auto",marginRight:"auto"}}>
+                    <div style={{margin: "0px auto 0 auto",paddingBottom:"200px",width:"100%"}} className="baba">
+                        <div ref="mainSection" className="mainSection"
+                             style={{width:"1024px",marginLeft:"auto",marginRight:"auto"}}>
 
-                    {ctrl}
+                            {ctrl}
+                        </div>
+                    </div>
+                    <ScaleBar data={Scales}/>
+                    <Footer/>
                 </div>
-            </div>
-            <ScaleBar data={Scales}/>
-            <Footer/>
-        </div>
 
-        );
+            );
+        }
+
+
     },
 
 });
