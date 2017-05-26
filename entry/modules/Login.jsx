@@ -3,12 +3,15 @@ import Footer from './Footer.jsx';
 import {Link} from 'react-router';
 import Nav from '../../components/basic/Nav.jsx';
 import MENU from '../../data/menus.json';
+import { connect } from 'react-redux'
 var ProxyQ=require('../../components/proxy/ProxyQ.js');
 var SyncStore = require('../../components/flux/stores/SyncStore');
 
+var UserActions=require('../action/UserActions');
 import '../../css/entry/modules/login.css'
 
 var Login =React.createClass({
+
     login:function(){
         // var name=$('#login_strLoginName').val()
         // var psw=$('#login_strPassword').val()
@@ -27,22 +30,27 @@ var Login =React.createClass({
         // }).catch(function(e){
         //     alert(e);
         // })
-        ProxyQ.query({
-            url: "/login",
-            data: {
-                username: '201613493',
-                password: 'dxb02083516'
-            },
 
-        }).then(function (json) {
 
-            var a = json;
-            SyncStore.setToken(a.access_token);
-            alert("登陆成功！拿到的token：" + a.access_token);
 
-        }).catch(function (e) {
-            alert(e);
-        })
+
+        // ProxyQ.query({
+        //     url: "/login",
+        //     data: {
+        //         username: '201613508',
+        //         password: 'qindong33491486'
+        //     },
+        //
+        // }).then(function (json) {
+        //
+        //     var a = json;
+        //     SyncStore.setToken(a.access_token);
+        //     alert("登陆成功！拿到的token：" + a.access_token);
+        //
+        // }).catch(function (e) {
+        //     alert(e);
+        // })
+        this.props.dispatch(UserActions.loginAction());
     },
 
     banner:function () {
@@ -72,7 +80,7 @@ var Login =React.createClass({
     },
 
     render:function(){
-
+        const { login } = this.props
         return (
             <div>
                 <Nav logo={"/images/school_logo.png"} data={MENU} isLogin={true}/>
@@ -191,5 +199,5 @@ var Login =React.createClass({
         )
     }
 });
-
-export default Login;
+export default connect()(Login);
+// export default Login;

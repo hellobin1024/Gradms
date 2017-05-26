@@ -1,9 +1,32 @@
 import React from 'react';
 import {render} from 'react-dom';
+var SyncStore = require('../../components/flux/stores/SyncStore');
+var ProxyQ=require('../../components/proxy/ProxyQ.js');
 
 import { Table} from 'react-bootstrap';
 var LetterOfCommitment =React.createClass({
+    healthyInfoExamineFormDownload:function () {
 
+        var headers={
+            "Authorization":"Bearer "+SyncStore.getToken(),
+        }
+        var url="/node/download"
+        var data={
+            request:"test"
+        }
+        ProxyQ.querymy(
+            url,
+            null,
+            null,
+            data,
+            headers,
+            function(ob) {
+                var a=ob.data
+
+            }.bind(this),
+
+        )
+    },
     render:function(){
         return (
             <div style={{borderStyle: 'double', borderColor: '#2f8dbc'}}>
@@ -125,6 +148,7 @@ var LetterOfCommitment =React.createClass({
                     </tr>
                     </tbody>
                 </Table>
+                <button onClick={this.healthyInfoExamineFormDownload}>test</button>
             </div>
 
         )

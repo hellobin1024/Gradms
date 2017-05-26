@@ -105,7 +105,7 @@ var GreenChannelApply =React.createClass({
                             申请原因
                         </td>
                         <td colSpan={3} >
-
+                            <textarea style={{resize:'none',width:'90%',height:'140px',marginLeft:'50px'}}/>
                         </td>
 
                     </tr>

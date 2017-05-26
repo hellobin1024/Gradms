@@ -20,13 +20,7 @@ var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 var WorkSpace =React.createClass({
 
-    remote(remoteObj) {
-        // Only cell editing, insert and delete row will be handled by remote store
-        remoteObj.cellEdit = true;
-        remoteObj.insertRow = true;
-        remoteObj.dropRow = true;
-        return remoteObj;
-    },
+
     iframeLoad:function(evt)
         {
             var target=evt.target;
@@ -59,27 +53,6 @@ var WorkSpace =React.createClass({
         var path=this.props.path==undefined?this.props.route.path:this.props.path;
 
         var ctrl;
-
-        const cellEditProp = {
-            mode: 'click'
-        };
-        const selectRow = {
-            mode: 'checkbox',
-            cliclToSelct: true
-        };
-        var products = [{
-            id: 1,
-            name: 1,
-            price: 120
-        }, {
-            id: 2,
-            name: 1,
-            price: 80
-        },{
-            id: 3,
-            name: 1,
-            price: 80
-        }];
 
         switch (path) {
             case App.getAppRoute() + "/app":
