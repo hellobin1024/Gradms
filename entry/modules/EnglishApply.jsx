@@ -1,13 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-
+import { Table} from 'react-bootstrap';
 var EnglishApply =React.createClass({
 
     render :function(){
         return(
-            <div>
-                <table data-toggle="table">
+            <div style={{borderStyle: 'double', borderColor: '#2f8dbc'}}>
+                <Table striped bordered condensed hover>
                     <thead>
                         <tr>
                             <th colSpan={4} style={{textAlign:'center'}}>免修英语申请</th>
@@ -17,7 +17,7 @@ var EnglishApply =React.createClass({
                         <tr>
                             <td colSpan={4} style={{textAlign:'center'}}>
                                 <p style={{color:'red'}}>提示:</p>
-                                <p>注意我基金第四季覅就是滴附件四大家覅使劲地</p>
+                                <p>申请时间已过或者审核已经通过，不能再进行申请或信息修改</p>
                             </td>
                         </tr>
                         <tr>
@@ -37,27 +37,41 @@ var EnglishApply =React.createClass({
                                     <option>111</option>
                                 </select>
                             </td>
-                            <td>成绩
+                            <td>
+                                考试时间
+                            </td>
+                            <td>
                                 <input/>
                             </td>
-                            <td>考试时间
+                        </tr>
+                        <tr>
+                            <td>
+                                成绩
+                            </td>
+                            <td colSpan={3}>
                                 <input/>
                             </td>
                         </tr>
                         <tr>
                             <td>学历、学位</td>
+                            <td></td>
                             <td>
                                 毕业院校
                             </td>
                             <td>
                                 <input/>
                             </td>
-                            <td>毕业专业
-                                <input/>
-                            </td>
                         </tr>
+                    <tr>
+                        <td>
+                            毕业专业
+                        </td>
+                        <td colSpan={3}>
+                            <input/>
+                        </td>
+                    </tr>
                     </tbody>
-                </table>
+                </Table>
             </div>
         )
     }

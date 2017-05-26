@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import News from './News.jsx';
+
 var config=require('../../config.json');
 import '../../css/entry/modules/mainSection.css';
 var SyncActions = require('../../components/flux/actions/SyncActions');

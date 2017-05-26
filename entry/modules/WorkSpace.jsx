@@ -1,6 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
 import '../../css/entry/modules/mainSection.css';
+import LetterOfCommitment from '../modules/LetterOfCommitment'
+import Anamnesis from '../modules/Anamnesis'
+import TripPlan from '../modules/TripPlan'
 import EnglishApply from '../modules/EnglishApply.jsx';
 import GreenChannelApply from '../modules/GreenChannelApply.jsx';
 import Brief from './Brief.jsx';
@@ -21,13 +24,7 @@ var SyncStore = require('../../components/flux/stores/SyncStore');
 
 var WorkSpace =React.createClass({
 
-    remote(remoteObj) {
-        // Only cell editing, insert and delete row will be handled by remote store
-        remoteObj.cellEdit = true;
-        remoteObj.insertRow = true;
-        remoteObj.dropRow = true;
-        return remoteObj;
-    },
+
     iframeLoad:function(evt)
         {
             var target=evt.target;
@@ -66,33 +63,11 @@ var WorkSpace =React.createClass({
 
         var ctrl;
 
-        const cellEditProp = {
-            mode: 'click'
-        };
-        const selectRow = {
-            mode: 'checkbox',
-            cliclToSelct: true
-        };
-        var products = [{
-            id: 1,
-            name: 1,
-            price: 120
-        }, {
-            id: 2,
-            name: 1,
-            price: 80
-        },{
-            id: 3,
-            name: 1,
-            price: 80
-        }];
-
         switch (path) {
             case App.getAppRoute() + "/app":
                 ctrl =
-                    <div>
-                       2
-                    </div>
+                    <LetterOfCommitment/>
+
                 break;
             case App.getAppRoute() + "/workspaceEnglishApply":
                 ctrl =
@@ -107,6 +82,18 @@ var WorkSpace =React.createClass({
             case App.getAppRoute() + "/workspaceStudentStatusInfo":
                 ctrl =
                     <StudentStatusInfo/>
+                break;
+            case App.getAppRoute() + "/englishApply":
+                ctrl =
+                    <EnglishApply/>
+                break;
+            case App.getAppRoute() + "/tripPlan":
+                ctrl =
+                    <TripPlan/>
+                break;
+            case App.getAppRoute() + "/anamnesis":
+                ctrl =
+                    <Anamnesis/>
                 break;
             default:
                 break;

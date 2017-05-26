@@ -105,8 +105,8 @@ var Brief=React.createClass({
             ProxyQ.query({
                 url: "/login",
                 data: {
-                    username: '201613493',
-                    password: 'dxb02083516'
+                    username: '201613508',
+                    password: 'qindong33491486'
                 },
 
             }).then(function (json) {
